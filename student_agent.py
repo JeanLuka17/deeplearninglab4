@@ -163,8 +163,8 @@ class AssemblyAgent:
 
         try:
             respuesta = llm_engine_func(
-                prompt=prompt, system="Planificador STRIPS.",
-                temperature=0.0, do_sample=False, max_new_tokens=8,
+                prompt=prompt, system=None,
+                temperature=0.0, do_sample=False, max_new_tokens=4,
             )
             plan_llm = self._parse_llm_plan(respuesta)
             if plan_llm and self._validar_plan(plan_llm, domain, init_state, goal_state):
